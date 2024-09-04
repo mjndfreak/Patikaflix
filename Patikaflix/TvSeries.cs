@@ -1,12 +1,9 @@
 namespace Patikaflix;
 
-public class TvSeries : ComedySeries
+public class TvSeries : Series
 {
     
-    public int ProductionYear { get; set; }
-    public int DebutYear { get; set; }
     
-    public string firstTv { get; set; }
 
     public override string ToString()
     {

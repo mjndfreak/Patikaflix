@@ -73,10 +73,17 @@ while (true)
 
 
 List<ComedySeries> comedySeries = new List<ComedySeries>();
-var comedy = tvSeries.Where(s => s.Genre.Contains("Comedy"));
+var comedy = tvSeries.Where(s => s.Genre.Contains("Comedy")).ToList();
 foreach (var s in comedy)
 {
-        comedySeries.Add(s);
+        ComedySeries com = new ComedySeries();
+        com.Name = s.Name;
+        com.ProductionYear = s.ProductionYear;
+        com.Genre = s.Genre;
+        com.Director = s.Director;
+        com.DebutYear = s.DebutYear;
+        com.firstTv = s.firstTv;
+        comedySeries.Add(com);
 }
 
 
@@ -90,5 +97,5 @@ Console.WriteLine("-------------------");
 
 foreach (var series in comedySeries)
 {
-        Console.WriteLine(series.ToString());
+        Console.WriteLine(series);
 }
